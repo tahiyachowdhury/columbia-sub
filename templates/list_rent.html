@@ -1,0 +1,141 @@
+<html>
+<head>
+	
+	<!-- JQuery -->
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>	
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+	<!-- My Scripts -->
+	
+	<script type="text/javascript" src="{{ url_for('static', filename = 'rent.js') }}"></script>
+
+	<script>
+		
+
+		rentals = {{rentals|tojson}}
+
+	</script>
+
+
+	<style>
+
+		#listrental{
+			height: 100px;
+
+		}
+
+		#enter_address{
+			width:100%;
+		}
+
+		.bottom_row_padding{
+			padding-bottom: 5px;
+		}
+
+		#home{
+			margin-left: 370px;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+
+		#addr{
+			width: 350px;
+		}
+
+		#inp{
+			width: 140px;
+		}
+
+		#submit_rental{
+			margin-left: 50px;
+
+		}
+
+		.header{
+			margin-top: 80px;
+		}
+
+		.text{
+			font-weight: bold;
+		}
+
+		.jumbotron{
+    		cursor: pointer;
+		}
+
+	</style>
+
+	
+</head>
+<body>
+
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Columbia Sublets</h1>      
+  </div> 
+
+
+	<div id="listrental">
+	<div class="list_text text">
+		List your apartment:
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-4">	
+			<div class="ui-widget">		
+				<input type="text"  id="enter_address" placeholder="Address">
+			</div>
+		</div>
+
+		<div class="col-md-2">
+			<input type="text" id="enter_rooms" placeholder="# Rooms" >
+		</div>
+
+		<div class="col-md-2">
+			<input type="text" id="enter_rent" placeholder="Rent" >
+		</div>
+
+		<div class="col-md-2">
+			<input type="text" id="enter_contact" placeholder="Contact email" >
+		</div>
+
+		<div class="col-md-2">
+			<button class="btn btn-primary" id="submit_rental">Submit</button>
+		</div>
+
+	</div>
+	<br>
+
+	<div class="row header">
+		<div class="col-md-4 text">			
+			Address
+		</div>
+
+		<div class="col-md-2 text">
+			# Rooms
+		</div>
+
+		<div class="col-md-2 text">
+			Rent
+		</div>
+
+		<div class="col-md-2 text">
+			Contact email
+		</div>
+
+	</div>
+	<br>
+
+	<div id="rentals">
+	</div>
+
+
+</div>
+
+</body>
+</html>
