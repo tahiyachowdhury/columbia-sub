@@ -1,0 +1,124 @@
+<html>
+<head>
+	
+	<!-- JQuery -->
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>	
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+	<!-- My Scripts -->
+	
+	<script type="text/javascript" src="{{ url_for('static', filename = 'search.js') }}"></script>
+
+	<script>
+		
+		rentals = {{rentals|tojson}}
+	</script>
+
+
+	<style>
+
+		#listrental{
+			height: 100px;
+
+		}
+
+		#enter_address{
+			width:100%;
+		}
+
+		.bottom_row_padding{
+			padding-bottom: 5px;
+		}
+
+		.search{
+			margin-bottom: 50px;
+		}
+
+		#home{
+			margin-left: 370px;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+
+		.jumbotron{
+    		cursor: pointer;
+		}
+
+		.text{
+			font-weight: bold;
+		}
+
+		#search_text{
+			margin-left: 20px;
+			display: inline;
+		}
+
+		#submit_search{
+			margin-left: 20px;
+		}
+
+	</style>
+
+	
+</head>
+<body>
+
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Columbia Sublets</h1>      
+  </div> 
+
+
+	<div id="listrental">
+
+	<div class="search">		
+		<input type="text"  id="search" placeholder="search">
+			<div id='search_text'>Rooms:</div>
+			<select id="room">
+			 <option value=1>1</option>
+			 <option value=2>2</option>
+			 <option value=3>3</option>
+			 <option value=4>4</option>
+			</select>
+
+			<div id='search_text'>Rent range:</div>
+			<select id="price">
+			 <option value="Any">Any</option>
+			 <option value="500-1000">500-1000</option>
+			 <option value="1000-1500">1000-1500</option>
+			 <option value="1500-2000">1500-2000</option>
+			 <option value="2000-2500">2000-2500</option>
+			 <option value="2500-3000">2500-3000</option>
+			</select>
+		<button class="btn btn-primary" id="submit_search">Submit</button>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4 text">	
+			Address
+		</div>
+		<div class="col-md-2 text">
+			# Rooms
+		</div>
+		<div class="col-md-2 text">
+			Rent
+		</div>
+		<div class="col-md-2 text">
+			Contact Email
+		</div>
+
+	</div>
+	<br>
+
+	<div id="rentals" >
+	</div>
+
+</div>
+
+</body>
+</html>
