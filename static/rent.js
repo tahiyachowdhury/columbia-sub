@@ -18,10 +18,11 @@ $(document).ready(function(){
 
 
 	$('.jumbotron').click(function(){
-  		window.location.replace("http://127.0.0.1:5000/")
+  		window.location.replace("http://167.71.243.61:5000/")
 	});
 
 })
+
 
 
 var display_rental = function(rental){
@@ -156,6 +157,7 @@ var display_rental = function(rental){
 
 	}
 }
+
 
 var display_rental_list = function(rentals){
 	$("#rentals").empty()
@@ -304,6 +306,10 @@ var delete_rental = function(id){
 	        data : JSON.stringify({"id": id}),
 		    success: function(data, text){
 		        var rental = data["rentals"]
+<<<<<<< HEAD
+=======
+				display_rental_list(rental)
+>>>>>>> 05bf12b7e232b7a197219970c61ea4323538e870
 
 		    },
 		    error: function(request, status, error){
@@ -326,7 +332,12 @@ var save_rental = function(new_rental){
 		    success: function(data, text){
 
 		        var rental = data["rentals"]
+<<<<<<< HEAD
 				display_rental(rental[rental.length - 1])
+=======
+				display_rental_list(rental)
+
+>>>>>>> 05bf12b7e232b7a197219970c61ea4323538e870
 				alert('Successfully added');
 				
 				$("#enter_address").val("")
