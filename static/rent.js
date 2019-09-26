@@ -306,10 +306,9 @@ var delete_rental = function(id){
 	        data : JSON.stringify({"id": id}),
 		    success: function(data, text){
 		        var rental = data["rentals"]
-<<<<<<< HEAD
-=======
+
 				display_rental_list(rental)
->>>>>>> 05bf12b7e232b7a197219970c61ea4323538e870
+
 
 		    },
 		    error: function(request, status, error){
@@ -332,12 +331,9 @@ var save_rental = function(new_rental){
 		    success: function(data, text){
 
 		        var rental = data["rentals"]
-<<<<<<< HEAD
-				display_rental(rental[rental.length - 1])
-=======
-				display_rental_list(rental)
 
->>>>>>> 05bf12b7e232b7a197219970c61ea4323538e870
+				display_rental(rental[rental.length - 1])
+
 				alert('Successfully added');
 				
 				$("#enter_address").val("")
