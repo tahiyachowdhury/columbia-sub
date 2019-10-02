@@ -35,7 +35,14 @@ var display_rental_list = function(rentals){
 		$.each(rentals, function(i, rental){
 			
 			var row = $("<div class='row bottom_row_padding'>")
+
+			var image = rental["image"]
+
+			var col_img = $("<img class='col-md-2' id='image' src=" +image+ " width='10' height='80'>")
 			
+			$(row).append(col_img)
+
+
 			var col_address = $("<div class='col-md-4'>")
 			$(col_address).append(rental["address"])
 			$(row).append(col_address)
@@ -48,7 +55,7 @@ var display_rental_list = function(rentals){
 			$(col_rent).append(rental["rent"])
 			$(row).append(col_rent)
 
-			var col_contact = $("<div class='col-md-3'>")
+			var col_contact = $("<div class='col-md-2'>")
 			$(col_contact).append(rental["contact"])
 			$(row).append(col_contact)
 

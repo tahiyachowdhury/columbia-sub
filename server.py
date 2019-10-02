@@ -2,30 +2,33 @@ from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
 import json, operator
-app = Flask(__name__)
+application = Flask(__name__)
 
 current_id = 31
 rentals = [
     {
         "id": 1, 
-        "address": "123 W. 116th St & Broadway",
+        "address": "123 86th street and Lexington Ave",
         "rooms": 1,
         "rent": 1100,
         "contact": "tc2672@columbia.edu",
+        "image": "/static/pics/372990927.jpg",
     },
-     {
+    {
         "id": 2, 
         "address": "456 W. 116th St & Amstardam Ave",
         "rooms": 1,
         "rent": 1200,
         "contact": "ana@columbia.edu",
+        "image": "/static/pics/373623068.jpg",
     },
     {
         "id": 3, 
-        "address": "56 W. 110th St & Broadway",
+        "address": "56 W. 50th street",
         "rooms": 1,
         "rent": 1000,
         "contact": "cd345@columbia.edu",
+        "image": "/static/pics/373711405.jpg",
     },
     {
         "id": 4, 
@@ -33,13 +36,15 @@ rentals = [
         "rooms": 1,
         "rent": 900,
         "contact": "sara@columbia.edu",
+        "image": "/static/pics/375641684.jpg",
     },
     {
         "id": 5, 
-        "address": "101 W. 109th St & Amstardam Ave",
+        "address": "101 Greenwitch St.",
         "rooms": 2,
         "rent": 1800,
         "contact": "faijac@columbia.edu",
+        "image": "/static/pics/376129783.jpg",
     },
     {
         "id": 6, 
@@ -47,6 +52,7 @@ rentals = [
         "rooms": 1,
         "rent": 1200,
         "contact": "tony@columbia.edu",
+        "image": "/static/pics/376196234.jpg",
     },
     {
         "id": 7, 
@@ -54,6 +60,7 @@ rentals = [
         "rooms": 1,
         "rent": 1300,
         "contact": "aj3478@columbia.edu",
+        "image": "/static/pics/376418293.jpg",
     },
     {
         "id": 8, 
@@ -61,13 +68,15 @@ rentals = [
         "rooms": 2,
         "rent": 1200,
         "contact": "tahiyachowdhury@columbia.edu",
+        "image": "/static/pics/376581027.jpg",
     },
     {
         "id": 9, 
-        "address": "784 W. 116th St & Frederick Dougless Blvd",
+        "address": "784 Sunnyside Ave",
         "rooms": 1,
         "rent": 1300,
         "contact": "elizabeth@columbia.edu",
+        "image": "/static/pics/376691515.jpg",
     },
     {
         "id": 10, 
@@ -75,6 +84,7 @@ rentals = [
         "rooms": 1,
         "rent": 1000,
         "contact": "nj6745@columbia.edu",
+        "image": "/static/pics/376993127.jpg",
     },
     {
         "id": 11, 
@@ -82,6 +92,7 @@ rentals = [
         "rooms": 1,
         "rent": 1200,
         "contact": "tc2672@columbia.edu",
+        "image": "/static/pics/377055381.jpg",
     },
     {
         "id": 12, 
@@ -89,6 +100,7 @@ rentals = [
         "rooms": 2,
         "rent": 2500,
         "contact": "hg6785@columbia.edu",
+        "image": "/static/pics/377063579.jpg",
     },
     {
         "id": 13, 
@@ -96,6 +108,7 @@ rentals = [
         "rooms": 1,
         "rent": 1000,
         "contact": "henryj@columbia.edu",
+        "image": "/static/pics/377075717.jpg",
     },
     {
         "id": 14, 
@@ -103,6 +116,7 @@ rentals = [
         "rooms": 1,
         "rent": 1250,
         "contact": "hji3456@columbia.edu",
+        "image": "/static/pics/377076799.jpg"
     },
     {
         "id": 15, 
@@ -110,6 +124,7 @@ rentals = [
         "rooms": 1,
         "rent": 900,
         "contact": "gary@columbia.edu",
+        "image": "/static/pics/377085114.jpg"
     },
     {
         "id": 16, 
@@ -117,6 +132,7 @@ rentals = [
         "rooms": 1,
         "rent": 1350,
         "contact": "julia@columbia.edu",
+        "image": "/static/pics/377089259.jpg"
     },
     {
         "id": 17, 
@@ -124,6 +140,7 @@ rentals = [
         "rooms": 1,
         "rent": 1200,
         "contact": "ted@columbia.edu",
+        "image": "/static/pics/377125682.jpg"
     },
     {
         "id": 18,  
@@ -131,6 +148,7 @@ rentals = [
         "rooms": 1,
         "rent": 1200,
         "contact": "jonathan@columbia.edu",
+        "image": "/static/pics/377132606.jpg"
     },
     {
         "id": 19, 
@@ -138,6 +156,7 @@ rentals = [
         "rooms": 1,
         "rent": 1150,
         "contact": "hi5672@columbia.edu",
+        "image": "/static/pics/377138619.jpg"
     },
     {
         "id": 20, 
@@ -145,6 +164,7 @@ rentals = [
         "rooms": 1,
         "rent": 1200,
         "contact": "ty4682@columbia.edu",
+        "image": "/static/pics/377139482.jpg"
     },
     {
         "id": 21, 
@@ -152,6 +172,7 @@ rentals = [
         "rooms": 1,
         "rent": 1300,
         "contact": "george@columbia.edu",
+        "image": "/static/pics/377141282.jpg"
     },
     {
         "id": 22, 
@@ -159,6 +180,7 @@ rentals = [
         "rooms": 1,
         "rent": 1000,
         "contact": "eliza@housing.com",
+        "image": "/static/pics/377168251.jpg"
     },
     {
         "id": 23, 
@@ -166,6 +188,7 @@ rentals = [
         "rooms": 1,
         "rent": 1200,
         "contact": "ds3456@columbia.edu",
+        "image": "/static/pics/3771715542.jpg"
     },
     {
         "id": 24, 
@@ -173,6 +196,7 @@ rentals = [
         "rooms": 1,
         "rent": 1200,
         "contact": "smith@columbia.edu",
+        "image": "/static/pics/376418293.jpg"
     },
     {
         "id": 25, 
@@ -180,6 +204,7 @@ rentals = [
         "rooms": 1,
         "rent": 800,
         "contact": "shannon@columbia.edu",
+        "image": "/static/pics/376955031.jpg"
     },
     {
         "id": 26, 
@@ -187,6 +212,7 @@ rentals = [
         "rooms": 1,
         "rent": 1100,
         "contact": "tara@columbia.edu",
+        "image": "/static/pics/376960216.jpg"
     },
     {
         "id": 27, 
@@ -194,6 +220,7 @@ rentals = [
         "rooms": 1,
         "rent": 950,
         "contact": "tc2672@columbia.edu",
+        "image": "/static/pics/376966113.jpg"
     },
     {
         "id": 28, 
@@ -201,6 +228,7 @@ rentals = [
         "rooms": 1,
         "rent": 1200,
         "contact": "tc2672@columbia.edu",
+        "image": "/static/pics/377033812.jpg"
     },
     {
         "id": 29, 
@@ -208,29 +236,31 @@ rentals = [
         "rooms": 1,
         "rent": 1100,
         "contact": "aaron@columbia.edu",
+        "image": "/static/pics/376926787.jpg"
     },
     {
         "id": 30, 
-        "address": "241 W. 106th St & Broadway",
+        "address": "241 77th street and 3rd Ave",
         "rooms": 1,
         "rent": 1200,
         "contact": "taylor@columbia.edu",
+        "image": "/static/pics/377162737.jpg"
     },
 ]
 
-@app.route('/')
+@application.route('/')
 def index():
    return render_template('index.html')
 
-@app.route('/find_apt')
+@application.route('/find_apt')
 def find_rent():
    return render_template('find_rent.html', rentals = rentals)
 
-@app.route('/list_apt')
+@application.route('/list_apt')
 def list_rent():
    return render_template('list_rent.html', rentals = rentals)
 
-@app.route('/save_rental', methods=['GET', 'POST'])
+@application.route('/save_rental', methods=['GET', 'POST'])
 def save_rental():
     global rentals
     global current_id   
@@ -247,7 +277,7 @@ def save_rental():
     return jsonify(rentals = rentals)
 
 
-@app.route('/delete_rental', methods=['GET', 'POST'])
+@application.route('/delete_rental', methods=['GET', 'POST'])
 def delete_rental():
     global rentals
 
@@ -255,7 +285,6 @@ def delete_rental():
     
     delete_id = int(id_json["id"])
 
-    # find the sales record with this id, and delete it.
     index_to_delete = None
     for (i, r) in enumerate(rentals):
         r_id = r["id"]
@@ -271,7 +300,7 @@ def delete_rental():
     return jsonify(rentals = rentals)
 
 
-@app.route('/search_rental', methods=['GET', 'POST'])
+@application.route('/search_rental', methods=['GET', 'POST'])
 def search_rental():
     global rentals
     search_res = []
@@ -320,4 +349,5 @@ def search_rental():
 
 
 if __name__ == '__main__':
-   app.run(host='0.0.0.0')
+   #app.run(host='0.0.0.0')
+   application.run()

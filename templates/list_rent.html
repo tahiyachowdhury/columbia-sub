@@ -51,7 +51,8 @@
 		}
 
 		#submit_rental{
-			margin-left: 50px;
+			margin-top: 50px;
+			margin-left: 450px;
 
 		}
 
@@ -67,6 +68,43 @@
     		cursor: pointer;
 		}
 
+		.upload{
+			margin-top: 50px;
+			margin-left: 400px;
+		}
+
+		.edit{
+
+			margin-bottom: 30px;
+		}
+
+		.delete{
+			margin-left: 530px;
+			margin-bottom: 30px;
+
+		}
+
+		.addr-text{
+			font-weight: bold;
+			margin-left: 180px;
+		}
+
+		.room-text{
+			font-weight: bold;
+			margin-left: 5px;
+		}
+
+		.rent-text{
+			font-weight: bold;
+			margin-left: 5px;
+		}
+
+		.email-text{
+			font-weight: bold;
+
+		}
+
+
 	</style>
 
 	
@@ -76,7 +114,7 @@
 
 <div class="container">
   <div class="jumbotron">
-    <h1>Columbia Sublets</h1>      
+    <h1>Lion Summer Housing</h1>      
   </div> 
 
 
@@ -104,27 +142,30 @@
 			<input type="text" id="enter_contact" placeholder="Contact email" >
 		</div>
 
-		<div class="col-md-2">
-			<button class="btn btn-primary" id="submit_rental">Submit</button>
-		</div>
 
 	</div>
+
+	<form class="upload" action="/action_page.php">
+  		<input type="file" id='image' name="pic" accept="image/*">
+	</form>
+
+	<button class="btn btn-primary" id="submit_rental">Submit</button>
 	<br>
 
 	<div class="row header">
-		<div class="col-md-4 text">			
+		<div class="col-md-4 addr-text">			
 			Address
 		</div>
 
-		<div class="col-md-2 text">
+		<div class="col-md-2 room-text">
 			# Rooms
 		</div>
 
-		<div class="col-md-2 text">
+		<div class="col-md-2 rent-text">
 			Rent
 		</div>
 
-		<div class="col-md-2 text">
+		<div class="col-md-2 email-text">
 			Contact email
 		</div>
 
