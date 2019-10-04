@@ -12,6 +12,7 @@ rentals = [
         "rooms": 1,
         "rent": 1100,
         "contact": "tc2672@columbia.edu",
+        "gender": "Female",
         "image": "/static/pics/372990927.jpg",
     },
     {
@@ -20,6 +21,7 @@ rentals = [
         "rooms": 1,
         "rent": 1200,
         "contact": "ana@columbia.edu",
+        "gender": "Male",
         "image": "/static/pics/373623068.jpg",
     },
     {
@@ -28,6 +30,7 @@ rentals = [
         "rooms": 1,
         "rent": 1000,
         "contact": "cd345@columbia.edu",
+        "gender": "Female",
         "image": "/static/pics/373711405.jpg",
     },
     {
@@ -36,6 +39,7 @@ rentals = [
         "rooms": 1,
         "rent": 900,
         "contact": "sara@columbia.edu",
+        "gender": "Male",
         "image": "/static/pics/375641684.jpg",
     },
     {
@@ -44,6 +48,7 @@ rentals = [
         "rooms": 2,
         "rent": 1800,
         "contact": "faijac@columbia.edu",
+        "gender": "Female",
         "image": "/static/pics/376129783.jpg",
     },
     {
@@ -52,6 +57,7 @@ rentals = [
         "rooms": 1,
         "rent": 1200,
         "contact": "tony@columbia.edu",
+        "gender": "Male",
         "image": "/static/pics/376196234.jpg",
     },
     {
@@ -60,6 +66,7 @@ rentals = [
         "rooms": 1,
         "rent": 1300,
         "contact": "aj3478@columbia.edu",
+        "gender": "Male",
         "image": "/static/pics/376418293.jpg",
     },
     {
@@ -68,6 +75,7 @@ rentals = [
         "rooms": 2,
         "rent": 1200,
         "contact": "tahiyachowdhury@columbia.edu",
+        "gender": "Male",
         "image": "/static/pics/376581027.jpg",
     },
     {
@@ -76,6 +84,7 @@ rentals = [
         "rooms": 1,
         "rent": 1300,
         "contact": "elizabeth@columbia.edu",
+        "gender": "Female",
         "image": "/static/pics/376691515.jpg",
     },
     {
@@ -84,6 +93,7 @@ rentals = [
         "rooms": 1,
         "rent": 1000,
         "contact": "nj6745@columbia.edu",
+        "gender": "Female",
         "image": "/static/pics/376993127.jpg",
     },
     {
@@ -92,30 +102,34 @@ rentals = [
         "rooms": 1,
         "rent": 1200,
         "contact": "tc2672@columbia.edu",
+        "gender": "Male",
         "image": "/static/pics/377055381.jpg",
     },
     {
         "id": 12, 
         "address": "98 W. 116th St & Columbus Ave",
         "rooms": 2,
-        "rent": 2500,
+        "rent": 1050,
         "contact": "hg6785@columbia.edu",
+        "gender": "Male",
         "image": "/static/pics/377063579.jpg",
     },
     {
         "id": 13, 
         "address": "345 W. 104th St & Amstardam Ave",
         "rooms": 1,
-        "rent": 1000,
+        "rent": 750,
         "contact": "henryj@columbia.edu",
+        "gender": "Female",
         "image": "/static/pics/377075717.jpg",
     },
     {
         "id": 14, 
         "address": "234 W. 113th St & Broadway",
         "rooms": 1,
-        "rent": 1250,
+        "rent": 950,
         "contact": "hji3456@columbia.edu",
+        "gender": "Female",
         "image": "/static/pics/377076799.jpg"
     },
     {
@@ -124,14 +138,16 @@ rentals = [
         "rooms": 1,
         "rent": 900,
         "contact": "gary@columbia.edu",
+        "gender": "Female",
         "image": "/static/pics/377085114.jpg"
     },
     {
         "id": 16, 
         "address": "847 W. 111th St & Broadway",
         "rooms": 1,
-        "rent": 1350,
+        "rent": 800,
         "contact": "julia@columbia.edu",
+        "gender": "Male",
         "image": "/static/pics/377089259.jpg"
     },
     {
@@ -140,14 +156,16 @@ rentals = [
         "rooms": 1,
         "rent": 1200,
         "contact": "ted@columbia.edu",
+        "gender": "Male",
         "image": "/static/pics/377125682.jpg"
     },
     {
         "id": 18,  
         "address": "45 W. 118th St & Amstardam Ave",
         "rooms": 1,
-        "rent": 1200,
+        "rent": 1100,
         "contact": "jonathan@columbia.edu",
+        "gender": "Female",
         "image": "/static/pics/377132606.jpg"
     },
     {
@@ -156,6 +174,7 @@ rentals = [
         "rooms": 1,
         "rent": 1150,
         "contact": "hi5672@columbia.edu",
+        "gender": "Male",
         "image": "/static/pics/377138619.jpg"
     },
     {
@@ -164,14 +183,16 @@ rentals = [
         "rooms": 1,
         "rent": 1200,
         "contact": "ty4682@columbia.edu",
+        "gender": "Male",
         "image": "/static/pics/377139482.jpg"
     },
     {
         "id": 21, 
         "address": "424  W. 102nd St & Amstardam Ave",
         "rooms": 1,
-        "rent": 1300,
+        "rent": 750,
         "contact": "george@columbia.edu",
+        "gender": "Female",
         "image": "/static/pics/377141282.jpg"
     },
     {
@@ -180,22 +201,25 @@ rentals = [
         "rooms": 1,
         "rent": 1000,
         "contact": "eliza@housing.com",
+        "gender": "Female",
         "image": "/static/pics/377168251.jpg"
     },
     {
         "id": 23, 
         "address": "138 W. 126th St & Columbus Ave",
         "rooms": 1,
-        "rent": 1200,
+        "rent": 950,
         "contact": "ds3456@columbia.edu",
+        "gender": "Male",
         "image": "/static/pics/3771715542.jpg"
     },
     {
         "id": 24, 
         "address": "13 W. 102nd St & Broadway",
         "rooms": 1,
-        "rent": 1200,
+        "rent": 900,
         "contact": "smith@columbia.edu",
+        "gender": "Female",
         "image": "/static/pics/376418293.jpg"
     },
     {
@@ -204,14 +228,16 @@ rentals = [
         "rooms": 1,
         "rent": 800,
         "contact": "shannon@columbia.edu",
+        "gender": "Male",
         "image": "/static/pics/376955031.jpg"
     },
     {
         "id": 26, 
         "address": "555 W. 117th St & Manhattan Ave",
         "rooms": 1,
-        "rent": 1100,
+        "rent": 1000,
         "contact": "tara@columbia.edu",
+        "gender": "Female",
         "image": "/static/pics/376960216.jpg"
     },
     {
@@ -220,30 +246,34 @@ rentals = [
         "rooms": 1,
         "rent": 950,
         "contact": "tc2672@columbia.edu",
+        "gender": "Female",
         "image": "/static/pics/376966113.jpg"
     },
     {
         "id": 28, 
         "address": "254 W. 103rd St & Amstardam Ave",
         "rooms": 1,
-        "rent": 1200,
+        "rent": 850,
         "contact": "tc2672@columbia.edu",
+        "gender": "Male",
         "image": "/static/pics/377033812.jpg"
     },
     {
         "id": 29, 
         "address": "542 W. 118th St & Amstardam Ave",
         "rooms": 1,
-        "rent": 1100,
+        "rent": 750,
         "contact": "aaron@columbia.edu",
+        "gender": "Female",
         "image": "/static/pics/376926787.jpg"
     },
     {
         "id": 30, 
         "address": "241 77th street and 3rd Ave",
         "rooms": 1,
-        "rent": 1200,
+        "rent": 600,
         "contact": "taylor@columbia.edu",
+        "gender": "Female",
         "image": "/static/pics/377162737.jpg"
     },
 ]
@@ -306,10 +336,13 @@ def search_rental():
     search_res = []
     room_res = []
     rent_res = []
+    gender_res = []
 
     search = request.get_json()    
     search_text = search[0]
     search_room = int(search[1])
+    search_gender = search[3] 
+
     if(str(search[2]) != 'Any'):
         search_price = search[2].split('-')
         search_price_low = int(search_price[0])
@@ -333,6 +366,11 @@ def search_rental():
         for data in room_res:
             if(data["rent"] >= search_price_low and data["rent"] <= search_price_high):
                 rent_res.append(data)
+
+        for data in rent_res:
+            if(data["gender"] == search_gender):
+                gender_res.append(data) 
+
     else:
         for data in rentals:
             if(data["rooms"] == search_room):
@@ -344,10 +382,15 @@ def search_rental():
             if(data["rent"] >= search_price_low and data["rent"] <= search_price_high):
                 rent_res.append(data)
 
+        for data in rent_res:
+            if(data["gender"] == search_gender):
+                gender_res.append(data) 
 
-    return jsonify(search_res = rent_res)
+
+    return jsonify(search_res = gender_res)
 
 
 if __name__ == '__main__':
    #app.run(host='0.0.0.0')
+   application.config['TEMPLATES_AUTO_RELOAD'] = True
    application.run()

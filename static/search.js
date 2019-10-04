@@ -8,8 +8,10 @@ $(document).ready(function(){
         var selectedRoom =  $('#room').find(":selected").text();
 
         var selectedPrice= $('#price').find(":selected").text();
+
+        var selectedGender= $('#gender').find(":selected").text();
         	
-		search_rental(search_text, selectedRoom, selectedPrice)
+		search_rental(search_text, selectedRoom, selectedPrice, selectedGender)
 	})
 
 	display_rental_list(rentals)	
@@ -47,7 +49,7 @@ var display_rental_list = function(rentals){
 			$(col_address).append(rental["address"])
 			$(row).append(col_address)
 
-			var col_rooms = $("<div class='col-md-2'>")
+			var col_rooms = $("<div class='col-md-1'>")
 			$(col_rooms).append(rental["rooms"])
 			$(row).append(col_rooms)
 
@@ -55,25 +57,38 @@ var display_rental_list = function(rentals){
 			$(col_rent).append(rental["rent"])
 			$(row).append(col_rent)
 
-			var col_contact = $("<div class='col-md-2'>")
-			$(col_contact).append(rental["contact"])
+			var col_gender= $("<div class='col-md-2'>")
+			$(col_gender).append(rental["gender"])
+			$(row).append(col_gender)
+
+
+			var email = rental["contact"]
+			var col_contact = $('<a href="#" onclick="sendMail(\''+ email+ '\')">Email</a>')
+			
 			$(row).append(col_contact)
 
 			$("#rentals").append(row)
 			$("#rentals").append('<br>')
+
 		})
 
 	}
 }
 
-var search_rental = function(search_text, selectedRoom, selectedPrice){
+var sendMail = function(email){
+	subject = "Lion Summer Housing Inquiry"
+	window.location.href = "mailto:" + email + "?subject=" + subject
+}
+
+
+var search_rental = function(search_text, selectedRoom, selectedPrice, selectedGender){
 
 	$.ajax({
         type: "POST",
         url: "search_rental",                
         dataType : "json",
         contentType: "application/json; charset=utf-8",
-        data : JSON.stringify([search_text, selectedRoom, selectedPrice]),
+        data : JSON.stringify([search_text, selectedRoom, selectedPrice, selectedGender]),
 	    success: function(data, text){
 	        var rental = data["search_res"]
 			display_rental_list(rental)

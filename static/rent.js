@@ -44,14 +44,17 @@ var display_rental = function(rental){
 		$(col_address).append(rental["address"])
 		$(row).append(col_address)
 
-		var col_rooms = $("<div class='col-md-2'>")
+		var col_rooms = $("<div class='col-md-1'>")
 		$(col_rooms).append(rental["rooms"])
 		$(row).append(col_rooms)
 
-		var col_rent = $("<div class='col-md-2'>")
+		var col_rent = $("<div class='col-md-1'>")
 		$(col_rent).append(rental["rent"])
 		$(row).append(col_rent)
 
+		var gender_col = $("<div class='col-md-1'>")
+		$(gender_col).append(rental["gender"])
+		$(row).append(gender_col)
 
 		var col_contact = $("<div class='col-md-2'>")
 		$(col_contact).append(rental["contact"])
@@ -83,12 +86,15 @@ var display_rental = function(rental){
 			var divHtml1 = $(col_address).text(); 
 			var divHtml2 = $(col_rooms).text(); 
 			var divHtml3 = $(col_rent).text(); 
+
 			var divHtml4 = $(col_contact).text(); 
 
-			var textBox1 = $("<div class='col-md-4'> <input id = 'enter_address'/> </div>");
-			var textBox2 = $("<div class='col-md-2'> <input id = 'inpt enter_rooms'/> </div>");
-			var textBox3 = $("<div class='col-md-2'> <input id = 'inpt enter_rent'/> </div>");
+			var textBox1 = $("<div class='col-md-4'> <input id = 'enter_address' /> </div>");
+			var textBox2 = $("<div class='col-md-1'> <input id = 'inpt enter_rooms' style='width:50px;'/> </div>");
+			var textBox3 = $("<div class='col-md-1'> <input id = 'inpt enter_rent'style='width:80px;'/> </div>");
+			var gender_new = $("<div class='col-md-1'> <select id='gender_edit'> <option value='male'>Male</option> <option value='female'>Female</option></select></div>")
 			var textBox4 = $("<div class='col-md-2'> <input id = 'inpt enter_contact'/> </div>");
+
 			
 			textBox1.find('input').val(divHtml1);
 			textBox2.find('input').val(divHtml2);
@@ -98,10 +104,11 @@ var display_rental = function(rental){
 			$(col_address).replaceWith(textBox1);
 			$(col_rooms).replaceWith(textBox2);
 			$(col_rent).replaceWith(textBox3);
+			$(gender_col).replaceWith(gender_new);
 			$(col_contact).replaceWith(textBox4);
 
 
-			var saveButton = $("<div class='col-md-2'> <button class='btn btn-primary'>Save</button></div>")
+			var saveButton = $("<div class='col-md-2 save'> <button class='btn btn-primary'>Save</button></div>")
 
 			$(saveButton).click(function(){
 
@@ -111,6 +118,7 @@ var display_rental = function(rental){
 				var room = $.trim( $(textBox2).find('input').val() )
 				var contact = $(textBox4).find('input').val()
 				var rent = $(textBox3).find('input').val()
+				var gender = document.getElementById('gender_edit').value
 
 				$(col_img).remove()
 				$(saveButton).remove()
@@ -118,6 +126,7 @@ var display_rental = function(rental){
 				$(textBox2).remove()
 				$(textBox3).remove()
 				$(textBox4).remove()
+				$(gender_new).remove()
 
 				if($.trim(address) == ""){
 					alert("You must enter an address")
@@ -150,6 +159,7 @@ var display_rental = function(rental){
 					"address": address,
 					"rooms": room,
 					"rent": rent,
+					"gender": gender,
 					"contact": contact,
 					}
 
@@ -206,6 +216,7 @@ var save_rental = function(new_rental){
 
 				alert('Successfully added');
 
+
 				display_rental(rental[rental.length - 1])
 				
 				$("#enter_address").val("")
@@ -232,6 +243,8 @@ var submitRental = function(edit){
 	var address = $("#enter_address").val()
 	var room = $.trim( $("#enter_rooms").val() )
 	var rent = $.trim( $("#enter_rent").val() )
+	var gender = document.getElementById('gender').value
+
 
 	if($.trim(address) == ""){
 		alert("You must enter an address")
@@ -264,6 +277,7 @@ var submitRental = function(edit){
 			"address": address,
 			"rooms": room,
 			"rent": rent,
+			"gender": gender,
 			"contact": contact,
 		}
 
